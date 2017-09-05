@@ -1,0 +1,1000 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <div th:replace="fragments/header :: header"/>
+</head>
+
+<body>
+
+<div th:replace="fragments/header :: navbar"/>
+
+
+<div id="wrapper" style="margin-bottom: -30px;">
+    <strong class="logo"><a href="#">Time etc</a></strong>
+    <header id="header" style="background:none;">
+        <div class="top-bar">
+            <style>
+                .bar {
+                    position: fixed;
+                }
+
+                .bounce {
+                    position: fixed;
+                    right: 50%;
+                    bottom: 0;
+                    margin-top: -25px;
+                    margin-left: -25px;
+                    height: 50px;
+                    width: 50px;
+                    text-align: center;
+                    background: none;
+                    -webkit-animation: bounce 1s infinite;
+                }
+
+                @-webkit-keyframes bounce {
+                    0% {
+                        bottom: 5px;
+                    }
+
+                    25%,
+                    75% {
+                        bottom: 15px;
+                    }
+
+                    50% {
+                        bottom: 20px;
+                    }
+
+                    100% {
+                        bottom: 0;
+                    }
+                }
+            </style>
+            <script>
+                var timedelay = 1;
+
+                function delayCheck() {
+                    if (timedelay == 5) {
+
+                        var distanceFromBottom = $(document).height() - $(window).height() - $(document).scrollTop();
+
+                        if (distanceFromBottom > 1200) {
+                            $('#meme').fadeIn();
+                        }
+
+                        timedelay = 1;
+                    }
+                    timedelay = timedelay + 1;
+                }
+
+                $(document).mousemove(function () {
+                    $('#meme').fadeOut();
+                    timedelay = 1;
+                    clearInterval(_delay);
+                    _delay = setInterval(delayCheck, 500);
+                });
+                // page loads starts delay timer
+                _delay = setInterval(delayCheck, 500)
+            </script>
+            <div class="bar">
+                <div id="meme" class="bounce"><img src="static/images/downarrow.png"
+                                                   style="position: absolute;opacity: 0.6;"></div>
+            </div>
+            <a href=""><img id="smallerlogo" style="margin-top: 8px;display: none;"
+                            src="static/images/smallnewtelogo.png" alt="Time etc Virtual Assistant service"></a>
+            <nav class="nav-bar" style="height: 47px;">
+                <a href="virtualassistant/get-started" class="link"
+                   style=" box-shadow: 1px 1px 2px #515151;background:#05d355;height: 20px;margin-top: 10px;padding-left:9px;padding-right: 9px;padding-top: 5px;font-size: 12.5px;"><strong>FREE
+                    TRIAL</strong></a>
+                <a href="virtualassistant/contact" class="link"
+                   style="height: 20px;margin-top: 10px;padding-left:9px;padding-right: 9px;padding-top: 5px;background: rgba(255,255,255,0.33);font-size: 12.5px;"><strong>1-800-297-8540</strong></a>
+                <ul class="nav" style="margin-top: 7px;">
+                    <li><a style="color:#FFF;" href="virtualassistant/explore">HOW CAN WE ASSIST YOU?</a></li>
+                    <li><a style="color:#FFF;" href="virtualassistant/why">WHY US?</a></li>
+                    <li><a style="color:#FFF;" href="javascript: void(0)">MORE <i class="ion-arrow-down-b"></i></a>
+                        <ul class="fallback">
+                            <li><a href="virtualassistant/pricing">PRICING</a></li>
+                            <li><a href="virtualassistant/about-us">ABOUT US</a></li>
+                            <li><a href="virtualassistant/contact">CONTACT US</a></li>
+                            <li><a href="http://web.timeetc.com/app/" target="_blank">MOBILE APP</a></li>
+                            <li><a style="color:#FFF;font-size: 12px;" href="virtualassistant/meet-our-assistants">MEET
+                                OUR ASSISTANTS</a></li>
+                            <li><a href="virtualassistant/blog">READ OUR BLOG</a></li>
+                            <li><a style="font-size: 11px;" href="http://web.timeetc.com/resources/">VIRTUAL ASSISTANT
+                                TIPS</a></li>
+                            <li><a href="virtualassistant/press">RECENT PRESS</a></li>
+                            <li><a href="virtualassistant/freelance-with-us">FREELANCE WITH US</a></li>
+                            <li><a href="https://lite.timeetc.com">LOG IN</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="promo-bar intro-2">
+        <div class="visual" style="position: relative;">
+            <div class="bg-holder" style="height: 670px;">
+                <div class="bg-frame" style="margin-bottom: -10px;padding-bottom: -10px;">
+                    <img src="images/doyourbestwork3-home.jpg" alt="Time etc - Virtual Assistant service"
+                         style="z-index: -10;">
+                    <div class="text-holder"
+                         style="text-align: center;margin-top: 20px;margin-right: auto;z-index: 100;-webkit-font-smoothing: antialiased;-moz-font-smoothing: antialiased;font-smoothing: antialiased;text-rendering: optimizeLegibility;font-smooth: always;">
+                        <!-- <h1 style="font-size: 48px;font-family: 'Roboto', sans-serif;font-weight: 900;line-height: 52px;">Get more done every day</h1> -->
+                        <h1 style="font-size: 55px;line-height:46px;font-weight: 700;letter-spacing: -1px;font-family: 'Roboto', sans-serif;">
+                            BE HOME FOR BEDTIME</h1>
+                        <h2 style="font-size: 23px;line-height:46px;font-weight: 400;font-family: 'Roboto', sans-serif;">
+                            Fit more into your day with a dedicated Virtual Assistant
+                            <!-- You can! By partnering with a dedicated Virtual Assistant -->
+                        </h2>
+                        <a href="virtualassistant/get-started" class="green-btn-small"
+                           style="-webkit-font-smoothing: antialiased;font-family: 'Roboto', sans-serif;margin-top: 65px;font-weight: 500;font-size: 18px;margin-left: 0;">Try
+                            A Virtual Assistant Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="benefits-section" style="background-image: url('static/images/');background-repeat: repeat-y;">
+        <div id="" class="container"
+             style="position:relative;width:950px;margin:0 auto;padding:0;border:0px;border-radius:10px;text-align: center;padding-top: 40px;background:none;min-height: 600px;">
+            <img src="images/vafront.png" id="" alt="Picture of your new assistant"
+                 style="position: absolute;bottom: 20px;z-index: 20;right: 0;left: -5px;">
+            <div style="-webkit-font-smoothing: antialiased;font-family: 'Roboto', sans-serif;line-height: 30px;position: absolute;left: 290px;top: 0;width: 600px;text-align: left;font-size: 17px;color:#474747;font-weight: 400;">
+                <div style="font-family: 'Roboto', sans-serif;font-size: 36px;color:#a9acae;font-weight: 500;line-height: 60px;letter-spacing: -1px;margin-top: 95px;margin-bottom: 15px;">
+                    Ready to get more done?
+                </div>
+                <p style="font-size: 19px;font-weight: 500;">Imagine having a trusted go-to person for your every need,
+                    whether it's business or personal.</p>
+                <p style="font-size: 18px;">You don't have to imagine it! Time etc gives you a U.S-based Virtual
+                    Assistant who'll take care of your to-do list for a fraction of the cost of a full time executive
+                    assistant.
+                </p>
+                <div style="width: 600px;height: 35px;margin-top: 20px;">
+                    <div style="float: left;width: 290px;font-family: 'Roboto', sans-serif;font-weight: 600;font-size: 23px;color:#a9acae;">
+                        LESS
+                    </div>
+                    <div style="float: left;width: 300px;font-family: 'Roboto', sans-serif;font-weight: 600;font-size: 23px;color:#a9acae;">
+                        MORE
+                    </div>
+                    <div style="clear: both;"></div>
+                    <div style="float: left;width: 290px;font-size: 18px;">
+                        <i class="ion-close"
+                           style="display: block;margin-top: 0px;margin-right: 7px; color:#7d8f93;font-size: 23px;float: left;"></i>Stress
+                        about unfinished tasks
+                    </div>
+                    <div style="float: left;width: 300px;font-size: 18px;">
+                        <i class="ion-checkmark"
+                           style="display: block;margin-top: 0px;margin-right: 7px; color:#7d8f93;font-size: 23px;float: left;"></i>Time
+                        to do what you love
+                    </div>
+                    <div style="clear: both;"></div>
+                    <div style="float: left;width:290px;font-size: 18px;">
+                        <i class="ion-close"
+                           style="display: block;margin-top: 0px;margin-right: 7px; color:#7d8f93;font-size: 23px;float: left;"></i>
+                        Worrying about your to-do list
+                    </div>
+                    <div style="float: left;width: 300px;font-size: 18px;">
+                        <i class="ion-checkmark"
+                           style="display: block;margin-top: 0px;margin-right: 7px; color:#7d8f93;font-size: 23px;float: left;"></i>Profit
+                        on your bottom line
+                    </div>
+                    <div style="clear: both;"></div>
+                    <div style="float: left;width:290px;font-size: 18px;">
+                        <i class="ion-close"
+                           style="display: block;margin-top: 0px;margin-right: 7px; color:#7d8f93;font-size: 23px;float: left;"></i>'Busy
+                        work'
+                    </div>
+                    <div style="float: left;width: 300px;font-size: 18px;">
+                        <i class="ion-checkmark"
+                           style="display: block;margin-top: 0px;margin-right: 7px; color:#7d8f93;font-size: 23px;float: left;"></i>Focus
+                        on growing your business
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="todo-section" style="background:#727e84;">
+        <div style="padding-top: 65px;margin-bottom: -82px;padding-bottom: 65px;margin-top: -20px;background:#727e84;">
+            <div class="centered-block" style="width: 950px;padding: 0;">
+                <h1 style="-webkit-font-smoothing: antialiased;font-family: 'Roboto', sans-serif;margin-bottom: 7px;font-weight: 500;font-size: 29px;color: #fff;letter-spacing: -2px;">
+                    Trusted by people in 10,000+ companies like these </h1>
+                <a href="http://www.google.com" target="_blank"><img style="-moz-transform: scale(0.75);zoom: 0.75;"
+                                                                     src="images/google-trans.png" alt="Google"/></a>
+                <a href="http://www.skype.com" target="_blank"><img
+                        style="margin-left: -10px;-moz-transform: scale(0.75);zoom: 0.75;" src="images/skype-trans.png"
+                        alt="Skype"/></a>
+                <a href="http://www.facebook.com" target="_blank"><img
+                        style="margin-left: -13px;-moz-transform: scale(0.75);zoom: 0.75;"
+                        src="images/facebook-trans.png" alt="Facebook"/></a>
+                <a href="http://www.marriott.com" target="_blank"><img
+                        style="margin-left: -10px;-moz-transform: scale(0.75);zoom: 0.75;"
+                        src="images/marriot-trans.png" alt="Marriot"/></a>
+                <h1 style="font-weight: 300;margin-top: 40px;margin-left: -10px;font-size: 23px;color: #fff;line-height: 35px;letter-spacing: 0px;">
+                    "Delegating to my Virtual Assistant has been a huge gift for me. I wish I'd done this five years
+                    ago!"</h1>
+                <p style="margin-top: 20px;margin-bottom: 40px;font-size: 18px;font-weight: 500;line-height: 26px;color: #fff;">
+                    Lauren Hasse at <a href="http://www.bpeace.org/"
+                                       style="color: #fff;border-bottom: 1px dotted #fff;text-decoration: none;"
+                                       target="_blank">Bpeace.org</a></p>
+            </div>
+        </div>
+    </section>
+    <div id="main" class="main" style="background:#fff;">
+        <link href="//web.timeetc.com/virtualassistant/css/ionicons.css" rel="stylesheet" type="text/css"/>
+        <div class="container"
+             style="position:relative;width:950px;margin:0 auto;padding:0;border:0px;border-radius:10px;text-align: center;padding-top: 40px;background:#fff;min-height: 500px;">
+            <div style="-webkit-font-smoothing: antialiased;font-family: 'Roboto', sans-serif;line-height: 30px;font-size: 17px;margin-top: 15px;margin-left: auto;margin-right: auto;font-weight: 400;position: absolute;left: 20px;top: 0;text-align: left;width: 500px;color:#474747;f">
+                <div style="font-family: 'Roboto', sans-serif;font-size: 32px;color:#a9acae;font-weight: 500;line-height: 48px;letter-spacing: -1px;margin-top: 45px;margin-bottom: 15px;">
+                    Every task on your to-do list has to be done....<i>but not by you</i>.
+                </div>
+                Do you have more to do than you have time for? If you answered, "Yes," then a Time etc Virtual Assistant
+                will make a dramatic difference - freeing you up to focus on what really matters.
+                <div style="width: 220px;height: 1px;margin: 25px 0px;background-color: #b0babf;opacity: .5;"></div>
+                <p style="font-size: 16px;font-weight: 400;line-height:33px;font-family: 'Roboto', sans-serif;">
+                    <strong>So what exactly can a Time etc Virtual Assistant assist you with? Admin, organizing, social
+                        media, writing, researching <a href="virtualassistant/explore">and more...</a>
+                </p>
+                <a href="virtualassistant/get-started" class="green-btn-small"
+                   style="-webkit-font-smoothing: antialiased;font-family: 'Roboto', sans-serif;margin-top: 33px;font-weight: 500;font-size: 18px;margin-left: 0;">Ready
+                    To Take A Free Trial?</a>
+
+            </div>
+
+
+            <img style="position: absolute;bottom: 0px;right: 0px;" src="images/todolistnewminimal.png">
+
+
+            <div style="position: absolute;right: 32px;bottom: 325px;width: 300px;height: 120px;text-align: right;padding: 10px;padding-left: 24px;padding-top: 50px;">
+                <p style="font-size: 19px;margin-top: 5px;font-weight: 600;color:#a9acae;">YOUR TO-DO LIST <i
+                        class="icon ion-checkmark" style="color:#72c553;font-size: 29px;"></i></p>
+            </div>
+
+            <div style="position: absolute;right: 60px;bottom: 255px;width: 300px;height: 120px;text-align: right;padding: 10px;padding-left: 24px;padding-top: 50px;">
+                <p style="font-size: 12.5px;margin-top: 5px;font-weight: 600;color: #3a8fd3;">TASKS ONLY YOU CAN DO</p>
+            </div>
+
+
+            <div style="position: absolute;right: 33px;bottom: 90px;width: 300px;height: 120px;text-align: right;padding: 10px;padding-left: 24px;padding-top: 50px;">
+                <p style="font-size: 12.5px;margin-top: 5px;font-weight: 600;color: #3a8fd3;">TASKS SOMEONE ELSE CAN
+                    DO</p>
+
+
+            </div>
+
+
+            <style>
+                .crumbs {
+                    position: absolute;
+                    display: block;
+                    float: left;
+                    height: 50px;
+                    background: #3498db;
+                    text-align: center;
+                    padding-left: 10px;
+                    padding-top: 20px;
+                    padding-bottom: 10px;
+                    padding-right: 10px;
+                    margin: 0 10px 0 0;
+                    font-weight: 600;
+                    font-size: 28px;
+                    text-decoration: none;
+                    color: #fff;
+                    border-top-left-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                }
+
+                .crumbs:before {
+                    content: "";
+                    position: absolute;
+                    right: -40px;
+                    top: 0;
+                    border-top: 40px solid transparent;
+                    border-bottom: 40px solid transparent;
+                    border-left: 40px solid #3498db;
+                }
+
+            </style>
+
+            <div class="crumbs"
+                 style="bottom: 328px;right: 270px;font-size: 19px;width: 75px;padding-top: 28px;padding-bottom: 2px;">
+                You
+            </div>
+            <div class="crumbs"
+                 style="bottom: 165px;right: 270px;font-size: 17px;width: 75px;padding-top: 17px;padding-bottom: 13px;">
+                Your Assistant
+            </div>
+
+
+            <!-- <div style="position: absolute;left: 355px;bottom: 200px;width: 430px;height: 120px;text-align: left;padding: 10px;padding-left: 60px;padding-top: 50px;" class="arrow_box">
+            <p style="font-size: 25px;margin-top: 15px;font-weight: 500;">You</p>
+
+
+            <p style="font-size: 18px;margin-top: 10px;font-weight: 100 !important;color:#6f6f6f;line-height: 23px;">Spend your valuable time on the things you love or that will benefit you and your business the most.</p>
+            </div>
+
+            <div style="position: absolute;left: 355px;bottom: 30px;width: 430px;height: 120px;text-align: left;padding: 10px;padding-left: 60px;padding-top: 50px;" class="arrow_box2">
+
+            <p style="font-size: 25px;margin-top: 15px;font-weight: 500;">Your Virtual Assistant</p>
+            <p style="font-size: 18px;margin-top: 10px;color:#585858;color:#6f6f6f;line-height: 23px;">Outsource the time-consuming but un-rewarding tasks to your experienced  U.S-based Virtual Assistant.</p>
+            </div>
+            -->
+
+
+        </div>
+
+
+        <div style="padding-top: 85px;padding-bottom: 60px;margin-top: 0px;background:#727e84;">
+
+            <div class="centered-block" style="text-align: center;width: 950px;">
+                <h1 style="font-weight: 300;margin-left: -10px;font-size: 28px;color: #fff;line-height: 35px;letter-spacing: 0px;">
+                    "My Time etc Virtual Assistant allows me to focus on the things that drive my company forward. I
+                    love Time etc."
+                </h1>
+
+
+                <p style="margin-top: 20px;margin-bottom: 40px;font-size: 18px;font-weight: 500;line-height: 26px;color: #fff;">
+                    Chris Bourke, Commercial Director <a href="http://relay42.com/" target="_blank"
+                                                         style="border-bottom: 1px dotted #fff;text-decoration: none;color: #fff;">Relay42</a>
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div id="yourassistant" class="container"
+             style="position:relative;width:950px;margin:0 auto;padding:0;border:0px;border-radius:10px;text-align: center;padding-top: 40px;background:#fff;margin-bottom: 50px;min-height: 550px;">
+
+            <img src="images/assistant1.png" id="roundtopassistant" alt="Picture of your new assistant"
+                 style="position: absolute;bottom: -50px;z-index: 20;right: 0;left: -5px;">
+
+            <div style="-webkit-font-smoothing: antialiased;font-family: 'Roboto', sans-serif;line-height: 30px;font-size: 21px;top: 15px;right: 0px;position: absolute;width: 600px;text-align: left;font-size: 17px;color:#474747;font-weight: 400;">
+
+
+                <div style="font-family: 'Roboto', sans-serif;font-size: 31px;color:#a9acae;font-weight: 500;line-height: 60px;letter-spacing: -1px;margin-top: 130px;margin-bottom: 15px;">
+                    Ever wondered what makes a great assistant?
+                </div>
+
+                A great assistant is like a magician - able to stay one step ahead of your needs at all times. That's
+                why we only offer multi-talented and well-educated U.S-based Virtual Assistants with <i>real-life
+                experience</i> in leading companies like Apple, AOL and Virgin.
+
+                <br/><br/>
+
+                <div style="width: 220px;height: 1px;margin: 25px 0px;background-color: #b0babf;opacity: .5;"></div>
+
+                <strong>Our 10-step selection process was designed by Sir Richard Branson's former Executive Assistant
+                    and is so tough that only a fraction of those who apply make it through. <a
+                            href="virtualassistant/why">Read more about our assistants</a>
+                </strong>
+                <br/>
+            </div>
+        </div>
+        <!--
+    <div style="padding-top: 100px;padding-bottom: 60px;margin-top: 20px;background:#727e84;">
+
+<div class="centered-block" style="text-align: center;width: 960px;padding: 0;">
+    <h1 style="font-weight: 300;font-size: 28px;color: #fff;line-height: 35px;letter-spacing: 0px;">"I love Time Etc. I’ve been using them for about 6 months and I trust them with everything."</h1>
+
+            <p style="margin-top: 20px;margin-bottom: 40px;font-size: 18px;font-weight: 500;line-height: 26px;color: #fff;">Danielle Vincent, <a href="http://www.outlawtradingco.com/" target="_blank" style="border-bottom: 1px dotted #fff;text-decoration: none;color: #fff;">Outlaw Trading Co</a></p>
+
+</div>
+
+</div>
+
+-->
+        <!--	<div class="bg-holder" style="height: 620px;margin-top: -50px;">
+
+        <div class="bg-frame" style="height: 750px;">
+
+
+    <img src="images/lowerman-2.jpg?v4" alt="Entrepreneur relaxing thanks to his Virtual Assistant" style="margin-bottom: -6px;z-index: -10;" >
+
+
+                <div style="margin-top: 185px;text-align: left;margin-left: auto;margin-right: auto;width: 800px;color: #fff;text-align: center;z-index: 100;">
+                    <h1  style="margin-top: 10px;font-size: 32px;color: #fff;font-weight: 500;line-height: 35px;">"Time etc gives you the kind of freedom loved by entrepreneurs all over the world"</h1>
+                    <p style="margin-top: 10px;margin-bottom: 10px;font-size: 22px;color: #fff;font-weight: 300;">It's time to start doing what you love every day
+
+                    </p>
+
+
+
+
+
+            <a href="virtualassistant/get-started" class="green-btn-small" style="margin-top: 15px;">Try it free now</a>	<a href="virtualassistant/how-it-works" class="grey-btn-small" style="margin-top: 15px;margin-left: 15px;">How it works</a>
+
+        </div>
+        </div>
+
+            </div>
+
+
+
+<div style="position: relative;margin-left: auto;margin-right: auto;width: 925px;">
+
+<div  style="position: absolute;top: -380px;z-index: 99;width: 925px;text-align: center;" >
+
+    <a href="http://www.forbes.com/sites/davidprosser/2013/11/01/how-to-sell-yourself-to-the-world-or-find-the-perfect-contractor/" target="_blank"><img src="images/newmedialogos-forbes.png" alt="Forbes"/></a><a href="http://www.theguardian.com/small-business-network/2014/mar/06/work-smarter-virtual-workforce-online-meetings" target="_blank" ><img src="images/newmedialogos-guardian.png"  alt="The Guardian"/></a><a href="http://www.dailymail.co.uk/money/news/article-2407906/Hunt-quality-workers-drives-freelancing-surge-small-firms.html" target="_blank"><img src="images/newmedialogos-mail.png"  alt="The Daily Mail"/></a><a href="http://www.telegraph.co.uk/sponsored/business/sme-home/business-tips/10617816/business-news-freelancers.html" target="_blank"><img src="images/newmedialogos-telegraph.png"  alt="The Telegraph"/></a>
+
+
+</div></div>
+
+-->
+        <div id="video" class="videomodalpopup" style="margin-top:-100px;">
+            <iframe src="//player.vimeo.com/video/68871880" width="899" height="505" frameborder="0"
+                    webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+            <br/>
+            <a class="modal_close" href="#"></a></div>
+        <aside class="add-info-2" style="background-color:#307cab;padding-top: 10px;padding-bottom: 17px;">
+            <div class="frame"
+                 style="padding-top: 40px;color:#fff;line-height: 30px;font-family: 'Roboto';font-size: 21px;font-weight: 300;width: 910px;-webkit-font-smoothing: antialiased;-moz-font-smoothing: antialiased;font-smoothing: antialiased;text-rendering: optimizeLegibility;font-smooth: always;">
+                <h1 style="color: white;font-size: 33px;font-weight: 600;margin-bottom: 23px;margin-top: 10px;">Try A
+                    Virtual Assistant Today - For Free</h1>
+                <h2 style="font-family: Roboto;line-height: 31px;font-size: 19px;font-weight: 400;color: white;">
+                    <strong>We'll match you to a Virtual Assistant</strong> and <strong>do your first task for
+                    FREE</strong>. It's a great way to find out how a Virtual Assistant could help you feel better about
+                    your to-do list.</h2>
+                <a href="virtualassistant/get-started" class="green-btn-small"
+                   style="-webkit-font-smoothing: antialiased;font-family: 'Roboto', sans-serif;margin-top: 33px;font-weight: 500;font-size: 18px;margin-left: 0;">Try
+                    A Virtual Assistant For Free</a> <a href="virtualassistant/contact" class="blue-btn-small"
+                                                        style="-webkit-font-smoothing: antialiased;font-family: 'Roboto', sans-serif;margin-left: 20px;margin-top: 33px;font-size: 18px;font-weight: 500;">Or
+                Arrange A Free Consultation</a>
+                <p><i style="font-size: 15px;color: #bde3f5">No obligation to continue. No credit card required.</i>
+                </p>
+                <style>
+                    .blue-btn-small {
+                        display: inline-block;
+                        vertical-align: top;
+                        min-width: 100px;
+                        padding: 0 20px 2px;
+                        background: #37c7f7;
+                        border-radius: 6px;
+                        box-shadow: #2fafd8;
+                        -webkit-box-shadow: 0 -4px 0 #2fafd8 inset;
+                        font-size: 15px;
+                        line-height: 50px;
+                        font-weight: 400;
+                        text-align: center;
+                        color: #fff;
+                    }
+
+                    .blue-btn-small:hover {
+                        text-decoration: none;
+                    }
+
+                    .blue-btn-small:active {
+                        background: #55b746;
+                    }
+                </style>
+                <!--
+        <form action="simple/get-started/go" method="post" id="contactform" class="details-form">
+<input id="action" name="action" type="hidden" value="send" />
+<input id="typehidden" name="typehidden" type="hidden" value="footer" />
+<input id="type" name="type" type="hidden" value="footer" />
+
+                                                <fieldset>
+
+
+
+                                    <input style="font-size: 12px;padding: .75rem;background: white;
+border: 0;
+-webkit-border-radius: .25rem;
+-moz-border-radius: .25rem;
+border-radius: .25rem;
+color: #8b8b8b;
+font-weight: 700;
+font-size: 1.1rem;
+font-family: 'Lato',sans-serif;
+-webkit-appearance: none;
+vertical-align: bottom;
+height: 28px;
+width: 300px;" type="text" name="name" id="name1" placeholder="Your name" value="" required>
+
+<input name="email" id="email1" type="email" placeholder="Your email" value="" style="font-size: 12px;padding: .75rem;background: white;border: 0;
+-webkit-border-radius: .25rem;
+-moz-border-radius: .25rem;
+border-radius: .25rem;
+color: #8b8b8b;
+font-weight: 700;
+font-size: 1.1rem;
+margin-left: 5px;
+font-family: 'Lato',sans-serif;
+-webkit-appearance: none;
+vertical-align: bottom;
+height: 28px;
+width: 300px;" id="email" required>
+
+
+
+
+                                                                 <a href="#" id="signupone" class="green-btn-small" style="margin-left: 5px;min-width: 135px !important;width: 135px !important; font-size: 18px !important;">Continue</a>
+
+<br />
+<p style="font-size: 14px;margin-top: 7px;"><strong>No credit card required.</strong> No catches. No spam.</p>
+
+
+
+                                                            </fieldset>
+                                                    <script>
+$(function() {
+
+    $("#signupone").click(function(e) {
+e.preventDefault();
+
+
+var name = $("#name1").val();
+var email = $("#email1").val();
+
+
+
+if (name == '') {
+alert("Please enter your name");
+} else {
+
+if (name == 'Your name') {
+alert("Please enter your name");
+} else {
+
+if (email == '') {
+alert("Please enter an email address");
+} else {
+
+if (email == 'Your email') {
+alert("Please enter an email address");
+} else {
+
+$(this).closest("form").submit();
+}
+}
+}
+}
+
+});
+
+});
+            </script>
+
+                    </form> -->
+            </div>
+        </aside>
+    </div>
+    <script src="https://use.fontawesome.com/f6d3a1907a.js"></script>
+    <footer id="footer"
+            style="background-color:rgba(30,59,83, 1);-webkit-font-smoothing: antialiased;-moz-font-smoothing: antialiased;font-smoothing: antialiased;text-rendering: optimizeLegibility;font-smooth: always;">
+        <div class="frame">
+            <div class="cols">
+                <nav class="nav-bar">
+                    <a href="index.php"> <img src="images/smallweblogo.png"
+                                              alt="Time etc Virtual Assistant service"></a>
+                    <ul class="nav" style="margin-top: 35px;margin-bottom: 35px;">
+                        <p style="font-weight: 400;">GET IN TOUCH</p>
+                        <hr style="border: 0;height: 0;border-top: 1px solid rgba(0, 0, 0, 0.1);border-bottom: 1px solid rgba(255, 255, 255, 0.3);">
+                        <li style="font-size: 20px;margin-bottom: 10px;"><a href="callto:18002978540">1-800-297-8540</a>
+                        </li>
+                        <li><a href="virtualassistant/contact"><i class="fa fa-envelope" aria-hidden="true"></i> EMAIL
+                            US</a></li>
+                        <li><a href="http://www.twitter.com/timeetc" target="_blank"><i class="fa fa-twitter"
+                                                                                        aria-hidden="true"></i> TWITTER</a>
+                        </li>
+                        <li><a href="http://www.linkedin.com/company/time-etc-limited" target="_blank"><i
+                                class="fa fa-linkedin-square" aria-hidden="true"></i> LINKEDIN</a></li>
+                    </ul>
+                    <style>
+                        /* Container used for styling the custom select, the buttom class below adds the bg gradient, corners, etc. */
+
+                        .custom-select {
+                            position: relative;
+                            display: block;
+                            margin-top: 0.5em;
+                            padding: 0;
+                        }
+
+                        /* These are the "theme" styles for our button applied via separate button class, style as you like */
+
+                        .button {
+                            border: 1px solid #bbb;
+                            border-radius: .3em;
+                            box-shadow: 0 1px 0 1px rgba(0, 0, 0, .04);
+                            background: #f3f3f3;
+                            /* Old browsers */
+                            background: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 100%);
+                            /* FF3.6+ */
+                            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #e5e5e5));
+                            /* Chrome,Safari4+ */
+                            background: -webkit-linear-gradient(top, #ffffff 0%, #e5e5e5 100%);
+                            /* Chrome10+,Safari5.1+ */
+                            background: -o-linear-gradient(top, #ffffff 0%, #e5e5e5 100%);
+                            /* Opera 11.10+ */
+                            background: -ms-linear-gradient(top, #ffffff 0%, #e5e5e5 100%);
+                            /* IE10+ */
+                            background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+                            /* W3C */
+                        }
+
+                        /* This is the native select, we're making everything but the text invisible so we can see the button styles in the wrapper */
+
+                        .custom-select select {
+                            width: 100%;
+                            margin: 0;
+                            background: none;
+                            border: 1px solid transparent;
+                            outline: none;
+                            /* Prefixed box-sizing rules necessary for older browsers */
+                            -webkit-box-sizing: border-box;
+                            -moz-box-sizing: border-box;
+                            box-sizing: border-box;
+                            /* Remove select styling */
+                            appearance: none;
+                            -webkit-appearance: none;
+                            /* Font size must the 16px or larger to prevent iOS page zoom on focus */
+                            font-size: 11px;
+                            /* General select styles: change as needed */
+                            font-family: helvetica, sans-serif;
+                            font-weight: bold;
+                            color: #444;
+                            padding: .6em 1.9em .5em .8em;
+                            line-height: 1.3;
+                        }
+
+                        /* Custom arrow sits on top of the select - could be an image, SVG, icon font, etc. or the arrow could just baked into the bg image on the select. Note this si a 2x image so it will look bad in browsers that don't support background-size. In production, you'd handle this resolution switch via media query but this is a demo. */
+
+                        .custom-select::after {
+                            content: "";
+                            position: absolute;
+                            width: 9px;
+                            height: 8px;
+                            top: 50%;
+                            right: 1em;
+                            margin-top: -4px;
+                            background-image: url(http://images/select-arrow.png);
+                            background-repeat: no-repeat;
+                            background-size: 100%;
+                            z-index: 2;
+                            /* These hacks make the select behind the arrow clickable in some browsers */
+                            pointer-events: none;
+                        }
+
+                        /* Hover style */
+
+                        .custom-select:hover {
+                            border: 1px solid #888;
+                        }
+
+                        /* Focus style */
+
+                        .custom-select select:focus {
+                            outline: none;
+                            box-shadow: 0 0 1px 3px rgba(180, 222, 250, 1);
+                            background-color: transparent;
+                            color: #222;
+                            border: 1px solid #aaa;
+                        }
+
+                        /* Set options to normal weight */
+
+                        .custom-select option {
+                            font-weight: normal;
+                        }
+
+                        /* ------------------------------------  */
+                        /* START OF UGLY BROWSER-SPECIFIC HACKS */
+                        /* ----------------------------------  */
+                        /* OPERA - Pre-Blink nix the custom arrow, go with a native select button to keep it simple. Targeted via this hack http://browserhacks.com/#hack-a3f166304aafed524566bc6814e1d5c7 */
+
+                        x:-o-prefocus,
+                        .custom-select::after {
+                            display: none;
+                        }
+
+                        @media screen and (-ms-high-contrast: active),
+                        (-ms-high-contrast: none) {
+                            .custom-select select::-ms-expand {
+                                display: none;
+                            }
+
+                            .custom-select select:focus::-ms-value {
+                                background: transparent;
+                                color: #222;
+                            }
+                        }
+
+                        /* Show only the native arrow */
+
+                        @-moz-document url-prefix() {
+                            .custom-select {
+                                overflow: hidden;
+                            }
+                            .custom-select select {
+                                width: 120%;
+                                width: -moz-calc(100% + 3em);
+                                width: calc(100% + em);
+                            }
+                        }
+
+                        /* Firefox focus has odd artifacts around the text, this kills that. See https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-focusring */
+
+                        .custom-select select:-moz-focusring {
+                            color: transparent;
+                            text-shadow: 0 0 0 #000;
+                        }
+
+                        /* ------------------------------------  */
+                        /*  END OF UGLY BROWSER-SPECIFIC HACKS  */
+                        /* ------------------------------------  */
+                    </style>
+                    <div class="button custom-select ff-hack" style="width: 140px;margin-top: 10px;">
+                        <script type="text/javascript">
+                            function selectCountry(obj) {
+                                var urlString = "http://web.timeetc.com/virtualassistant/index.php?ppccountry=";
+                                var selectedCountry = obj.options[obj.selectedIndex];
+                                if (selectedCountry.value != "nothing") {
+                                    window.location = urlString + selectedCountry.value;
+                                }
+                            }
+                        </script>
+                        <select onchange="selectCountry(this)">
+                            <option value="uk">United Kingdom</option>
+                            <option value="usa" selected>United States</option>
+                            <option value="usa">Everywhere else</option>
+                        </select>
+                    </div>
+                </nav>
+                <section class="contact-panel" style="margin-left: 150px;">
+                    <ul class="nav">
+                        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700'
+                              rel='stylesheet' type='text/css'>
+                        <li><a href="virtualassistant/get-started" style="font-weight: 700;font-size: 14px;">TAKE A FREE
+                            TRIAL <i class="fa fa-check-square" aria-hidden="true"></i></a></li>
+                        <li><a href="virtualassistant/explore">HOW WE CAN ASSIST YOU</a></li>
+                        <li><a href="virtualassistant/why">WHY US?</a></li>
+                        <li><a href="virtualassistant/pricing">PRICING</a></li>
+                        <li><a href="virtualassistant/about-us">ABOUT US</a></li>
+                        <li><a href="virtualassistant/meet-our-assistants">MEET SOME OF OUR ASSISTANTS</a></li>
+                        <li><a href="virtualassistant/pennipike">ABOUT PENNI PIKE</a></li>
+                        <li><a href="http://web.timeetc.com/app/" target="_blank">GET THE MOBILE APP</a></li>
+                        <li><a href="http://web.timeetc.com/resources/">HOW TO USE A VIRTUAL ASSISTANT</a></li>
+                        <li><a href="virtualassistant/freelance-with-us">FREELANCE WITH us</a></li>
+                        <li><a href="virtualassistant/press">Recent press</a></li>
+                        <li><a href="virtualassistant/site-map">Site Map</a></li>
+                        <li><a href="">HOME</a></li>
+                        <li style="margin-top: 10px;"><a href="https://lite.timeetc.com">LOG IN</a></li>
+                    </ul>
+                </section>
+                <section class="browse-panel">
+                </section>
+                <section class="start-building-panel" style="float: right;margin-right: 20px;text-align: left;">
+                    <h1 style="font-size: 20px;line-height: 22px;font-weight: 600;-webkit-font-smoothing: antialiased;-moz-font-smoothing: antialiased;font-smoothing: antialiased;text-rendering: optimizeLegibility;font-smooth: always;">
+                        UNLEASH YOUR TRUE POTENTIAL WITH A VIRTUAL ASSISTANT</h1>
+                    <hr style="border: 0;height: 0;border-top: 1px solid rgba(0, 0, 0, 0.1);border-bottom: 1px solid rgba(255, 255, 255, 0.3);">
+                    <h2 style="font-weight: 400;line-height: 21px;font-size: 15px;color:#6ec2f7;-webkit-font-smoothing: antialiased;-moz-font-smoothing: antialiased;font-smoothing: antialiased;text-rendering: optimizeLegibility;font-smooth: always;">
+                        Created by Sir Richard Branson's former assistant, Time etc is the secret weapon of thousands of
+                        high achieving people in companies like Google, Facebook and more. So far, we've saved people
+                        like you from more than 1,480,462 time consuming tasks.</h2>
+                    <br/>
+                    <br/>
+                    <a href="https://twitter.com/share" class="twitter-share-button"
+                       data-url="http://web.timeetc.com/ref/twittershare"
+                       data-text="I'm loving Time etc - Virtual Assistants for entrepreneurs" data-via="timeetc"
+                       data-size="large" data-hashtags="virtualassistant">Tweet this</a>
+                    <script>
+                        !function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0],
+                                p = /^http:/.test(d.location) ? 'http' : 'https';
+                            if (!d.getElementById(id)) {
+                                js = d.createElement(s);
+                                js.id = id;
+                                js.src = p + '://platform.twitter.com/widgets.js';
+                                fjs.parentNode.insertBefore(js, fjs);
+                            }
+                        }(document, 'script', 'twitter-wjs');
+                    </script>
+                    <!--<img src="images/guardianwinners.png" style="margin-right: 0px;margin-top:70px;"> -->
+                    <!--	<a href="virtualassistant/get-started" class="green-btn" style="min-width: 135px !important;width: 135px !important; font-size: 18px !important;margin-top: 20px;">Try it free now</a>
+                                            <p style="width: 185px;margin-left: 50px;margin-top: 6px;color: #e1e1e1;font-size: 14px;">Free trial with $25 free credit</p><p style="width: 185px;margin-left: 50px;margin-top: 0px;color: #cccccc;font-size: 12px;">No credit card required</p> -->
+                </section>
+            </div>
+            <section class="btm-bar" style="position: relative;text-align: left;">
+                <h1 style="letter-spacing:0px;font-size: 19px;font-weight: 400;">
+
+                    Our Virtual Assistants are based all over the U.S. and are available Worldwide.
+                </h1>
+                <ul class="footer-nav"
+                    style="float: left;margin-top: 5px;margin-left: -10px;color: rgba(179, 179, 179, 0.84);font-weight: 400;">
+                    <li style="font-size: 15px;color: rgba(179, 179, 179, 0.84)">&copy; 2007-2017 Time etc USA</li>
+                    <li><a href="virtualassistant/terms-and-conditions"
+                           style="font-size: 15px;color: rgba(179, 179, 179, 0.84)">Legal</a></li>
+                    <li><a href="virtualassistant/privacy-policy"
+                           style="font-size: 15px;color: rgba(179, 179, 179, 0.84)">Privacy</a></li>
+                </ul>
+                <p style="position: absolute;top: -84px;right: 135px;">
+                    <a href="http://fitsmallbusiness.com/best-virtual-assistant-services-reviews/" target="_blank"><img
+                            style="" src="images/bestvirtualassistantservice_small.png"></a>
+                </p>
+                <p style="position: absolute;top: -80px;right: 20px;">
+                    <a href="http://www.toptenreviews.com/business/services/best-virtual-assistants/time-etc-review/"
+                       target="_blank"><img style="" src="images/toprenreviews_small.png"></a>
+                </p>
+                <!--	    <p style="margin-top: 100px;">
+
+ <a href="http://www.forbes.com/sites/davidprosser/2013/11/01/how-to-sell-yourself-to-the-world-or-find-the-perfect-contractor/" target="_blank"><img style="opacity: 0.3;filter: alpha(opacity=30);" src="images/newmedialogos-forbes.png"></a>
+
+
+ <a href="http://www.telegraph.co.uk/sponsored/business/sme-home/business-tips/10617816/business-news-freelancers.html" target="_blank"><img style="margin-left: 0px;opacity: 0.3;filter: alpha(opacity=30);" src="images/newmedialogos-telegraph.png"></a>
+
+
+<a href="http://www.techradar.com/news/world-of-tech/management/why-your-organisation-should-close-its-office-and-open-up-google-hangouts-1249240/2" target="_blank">
+
+<img style="margin-left: 15px;opacity: 0.2;filter: alpha(opacity=20);" src="images/techradar.png">
+</a>
+
+
+</p> -->
+            </section>
+        </div>
+    </footer>
+</div>
+<!-- Google Code for USA remarketing -->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 1058964107;
+    var google_conversion_label = "p01VCJ2KrVYQi4X6-AM";
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt=""
+             src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1058964107/?value=1.00&amp;currency_code=GBP&amp;label=p01VCJ2KrVYQi4X6-AM&amp;guid=ON&amp;script=0"/>
+    </div>
+</noscript>
+<script type="text/javascript" src="//web.timeetc.com/virtualassistant/js/jquery.main.js"></script>
+<script type="text/javascript" src="//web.timeetc.com/virtualassistant/js/distrib.min.js"></script>
+<link rel="stylesheet" href="//web.timeetc.com/virtualassistant/css/easybox.min.css" type="text/css" media="screen"/>
+<script>
+    $('#launchvid')
+        .click(function (e) {
+            e.preventDefault();
+            $.easybox([{url: "#unique_id"}]);
+
+        });
+</script>
+<script>
+    $(function () {
+        var $triggered = 0;
+        var $triggeredtwo = 0;
+        var $triggeredthree = 0;
+
+        $(window).bind("scroll.alert", function () {
+            var $this = $(this);
+
+
+            if ($this.scrollTop() >= 600) {
+
+                $("#header").css("background", "url(../images/bg-header-home.png)");
+                $("#smallerlogo").show('slow');
+
+            }
+            if ($this.scrollTop() <= 599) {
+                $("#smallerlogo").hide();
+                $("#header").css("background", "none");
+
+
+            }
+        });
+    });
+</script>
+<script>
+    $('#disabled_link').click(function (e) {
+        e.preventDefault();
+        //do other stuff when a click happens
+    });
+</script>
+<script type="text/javascript" src="//web.timeetc.com/virtualassistant/js/jquery.leanModal.min.js" defer></script>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-41965829-15', 'auto');
+    ga('send', 'pageview');
+</script>
+<script src="//web.timeetc.com/virtualassistant/js/noframework.waypoints.min.js"></script>
+<script>
+    var waypoint = new Waypoint({
+        element: document.getElementById('yourassistant'),
+        handler: function () {
+            console.log('yourassistant')
+            ga('send', 'pageview', {
+                'page': '/yourassistant',
+                'title': 'Uourassistant'
+            });
+        }
+    })
+
+    var waypoint = new Waypoint({
+        element: document.getElementById('howitworks'),
+        handler: function () {
+            console.log('howitworks')
+            ga('send', 'pageview', {
+                'page': '/howitworks',
+                'title': 'How It Works'
+            });
+        }
+    })
+
+    var waypoint = new Waypoint({
+        element: document.getElementById('services'),
+        handler: function () {
+            console.log('services')
+            ga('send', 'pageview', {
+                'page': '/services',
+                'title': 'Services'
+            });
+        }
+    })
+
+
+    var waypoint = new Waypoint({
+        element: document.getElementById('pricing'),
+        handler: function () {
+            console.log('pricing')
+            ga('send', 'pageview', {
+                'page': '/pricing',
+                'title': 'Pricing'
+            });
+        }
+    })
+</script>
+<script type="text/javascript">
+    adroll_adv_id = "RPFRNEP7WRF2JC7CQL7YNT";
+    adroll_pix_id = "HBAX6B2TP5E3BBLTRVI5CO";
+    /* OPTIONAL: provide email to improve user identification */
+    /* adroll_email = "username@example.com"; */
+    (function () {
+        var _onload = function () {
+            if (document.readyState && !/loaded|complete/.test(document.readyState)) {
+                setTimeout(_onload, 10);
+                return
+            }
+            if (!window.__adroll_loaded) {
+                __adroll_loaded = true;
+                setTimeout(_onload, 50);
+                return
+            }
+            var scr = document.createElement("script");
+            var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+            scr.setAttribute('async', 'true');
+            scr.type = "text/javascript";
+            scr.src = host + "/j/roundtrip.js";
+            ((document.getElementsByTagName('head') || [null])[0] ||
+            document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+        };
+        if (window.addEventListener) {
+            window.addEventListener('load', _onload, false);
+        } else {
+            window.attachEvent('onload', _onload)
+        }
+    }());
+</script>
+
+<!--<div class="container">
+    <h1>Secured App</h1>
+</div>-->
+
+<div th:replace="fragments/footer :: footer"/>
+
+</body>
+</html>
